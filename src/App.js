@@ -1,14 +1,7 @@
 /*global chrome*/
 import './App.css'
+// import _cookies from './seed.js'
 import { useEffect, useState } from 'react'
-
-// test data
-const _cookies = [
-  { domain: 'youtube.com', name: 'cookie 1', value: '13423524542935023894509234' },
-  { domain: 'google.com', name: 'cookie 2', value: '13423524542935023894509234' },
-  { domain: 'bing.com', name: 'cookie 3', value: '13423524542935023894509234' },
-  { domain: 'yandex.com', name: 'cookie 4', value: '13423524542935023894509234' },
-]
 
 const App = () => {
   const [cookies, setCookies] = useState([])
@@ -41,7 +34,7 @@ const App = () => {
 
   const togglePassword = (el) => {
     const type = el.target.parentElement.firstElementChild.type
-    let newType = type == 'password' ? 'text' : 'password'
+    let newType = type === 'password' ? 'text' : 'password'
     el.target.parentElement.firstElementChild.type = newType
   }
 
@@ -51,9 +44,11 @@ const App = () => {
         <td>{cookie.domain}</td>
         <td>{cookie.name}</td>
         <td>
-          <span>
+          <span style={{ display: 'flex', flexDirection: 'row' }}>
             <input type="password" value={cookie.value} />
-            <a onClick={togglePassword}> X</a>
+            <button style={{ marginLeft: '3px' }} onClick={togglePassword}>
+              X
+            </button>
           </span>
         </td>
       </tr>
