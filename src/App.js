@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+/*global chrome*/
+import './App.css'
+import { useEffect, useState } from 'react'
 
-function App() {
+const App = () => {
+  const [cookies, setCookies] = useState([])
+  const [domain, setDomain] = useState()
+
+  useEffect(() => {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      var url = new URL(tabs[0].url).hostname
+      let domain = url.replace('www.', '.')
+      setDomain(domain)
+    })
+  }, [])
+
+  useEffect(() => {
+    chrome.cookies.getAll({ domain: domain }).then((result) => {
+      setCookies(result)
+    })
+  }, [domain])
+
+  const ListCookies = () => {
+    return cookies.map((cookie) => (
+      <tr>
+        <td>{cookie.domain}</td>
+        <td>{cookie.name}</td>
+        <td>{cookie.value}</td>
+      </tr>
+    ))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h4>Domain: {domain}</h4>
+        <table>
+          <tr>
+            <th>Domain</th>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+          <ListCookies></ListCookies>
+        </table>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

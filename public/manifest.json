@@ -6,7 +6,8 @@
   "background": {
     "service_worker": "./background.js"
   },
-  "permissions": [],
+  "permissions": ["cookies"],
+  "host_permissions": ["<all_urls>"],
   "author": "Renier Meintjies <reniermeintjies@gmail.com>, Cullen Botha <culbot@gmail.com>",
   "action": {
     "default_popup": "popup.html",
