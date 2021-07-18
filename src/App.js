@@ -9,7 +9,7 @@ const App = () => {
   useEffect(() => {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       var url = new URL(tabs[0].url).hostname
-      let domain = url.replace('www.', '.')
+      let domain = url.replace('www.', '')
       setDomain(domain)
     })
   }, [])
