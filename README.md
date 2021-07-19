@@ -1,1 +1,1 @@
-# Run `make build` to prepare for deploy in production
+## Run `make build` to prepare for deployment in production
