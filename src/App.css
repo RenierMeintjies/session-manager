@@ -1,11 +1,13 @@
-.App {
-  text-align: center;
+th,
+td {
+  border: 1px solid black;
+  padding: 0.5em 1em;
+  max-width: fit-content;
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+  text-align: center;
 }
 
 .App-header {
@@ -22,12 +24,15 @@
   color: #61dafb;
 }
 
-th,
-td {
-  border: 1px solid black;
-  padding: 0.5em 1em;
-  max-width: fit-content;
-  overflow: auto;
+#value-input {
+  border: none;
+  display: inline;
+  font-family: inherit;
+  font-size: inherit;
+  padding: none;
+  width: auto;
+  background-color: #282c34;
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -39,13 +44,8 @@ td {
   }
 }
 
-.value-input {
-  border: none;
-  display: inline;
-  font-family: inherit;
-  font-size: inherit;
-  padding: none;
-  width: auto;
-  background-color: #282c34;
-  color: white;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
