@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import chromeApi from '../../api/chrome'
+import chromeApi from '../../api/chrome/'
 
 // Cookie hooks
 
@@ -8,7 +8,7 @@ export const useCookies = () => {
   const domain = useDomain()
 
   const fetchCookies = () => {
-    chromeApi.fetchCookies(domain).then((results: object) => {
+    chromeApi.fetchCookies(domain).then((results: any) => {
       setCookies(results)
     })
   }
@@ -22,10 +22,10 @@ export const useCookies = () => {
 }
 
 export const useDomain = () => {
-  const [domain, setDomain] = useState<string>('')
+  const [domain, setDomain] = useState<any>('')
 
   useEffect(() => {
-    chromeApi.fetchDomain().then((result: string) => {
+    chromeApi.fetchDomain().then((result: any) => {
       setDomain(result)
     })
   }, [])

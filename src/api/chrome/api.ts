@@ -1,9 +1,5 @@
 /*global chrome*/
 
-// const [cookies, setCookies] = useState(seed)
-// TODO Localhost development cookie handling
-// import seed from '../../seed'
-
 const deleteCookie = (cookie: any) => {
   // TODO validate cookies actually deleted
   chrome.cookies.remove({
