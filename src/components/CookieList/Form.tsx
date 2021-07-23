@@ -3,7 +3,7 @@ import React from 'react'
 const Form = ({ cookie }: any) => {
   return (
     <>
-      {Object.keys(cookie).map((key) => {
+      {Object.keys(cookie).map(key => {
         let val = cookie[key]
 
         return (

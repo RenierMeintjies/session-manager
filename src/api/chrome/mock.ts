@@ -10,7 +10,7 @@ const fetchCookies = async (domain: any) => {
 }
 
 const fetchDomain = async () => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     resolve('domain-1.com')
   })
 }
