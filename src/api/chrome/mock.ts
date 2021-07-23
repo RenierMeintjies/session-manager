@@ -37,4 +37,4 @@ const httpRequest = async (method: string, url: string) => {
   return response
 }
 
-export default { deleteCookie, fetchCookies, fetchDomain, onCookieChange }
+export { deleteCookie, fetchCookies, fetchDomain, onCookieChange }

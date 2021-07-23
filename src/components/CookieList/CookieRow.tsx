@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import chromeApi from '../../api/chrome'
 import {
   Visibility as VisibilityIcon,
