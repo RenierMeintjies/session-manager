@@ -39,7 +39,7 @@ const CookieRow = ({ cookie }: any) => {
         <td>{cookie.domain}</td>
         <td>{cookie.name}</td>
         <td>
-          <input id="value-input" type={visible ? 'text' : 'password'} value={cookie.value} />
+          <input className="value-input" type={visible ? 'text' : 'password'} value={cookie.value} />
         </td>
         <td style={{ display: 'flex', flexDirection: 'row' }}>
           <VisibilityToggle onClick={handleValueToggle} />
