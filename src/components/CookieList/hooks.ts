@@ -13,11 +13,12 @@ export const useCookies = () => {
     })
   }
 
-  useEffect(() => {
-    fetchCookies()
-    chromeApi.onCookieChange(fetchCookies)
-  }, [domain])
-
+  useEffect(
+    () => {
+      chromeApi.onCookieChange(fetchCookies)
+      // TODO why is this here? It makes TS and me cry :(
+    } /* [domain] */
+  )
   return cookies
 }
 
@@ -29,6 +30,5 @@ export const useDomain = () => {
       setDomain(result)
     })
   }, [])
-
   return domain
 }

@@ -1,5 +1,4 @@
 /*global chrome*/
-
 const deleteCookie = (cookie: any) => {
   // TODO validate cookies actually deleted
   chrome.cookies.remove({
@@ -26,7 +25,6 @@ const onCookieChange = (onChange: Function) => {
 }
 
 // private | extract these to common utils?
-
 const baseDomain = (url: string) => {
   const ar = url.split('.')
   return ar.slice(-2).join('.')
@@ -40,4 +38,4 @@ const cookieUrl = (cookie: any) => {
   return 'http://' + domain
 }
 
-export default { deleteCookie, fetchCookies, fetchDomain, onCookieChange }
+export { deleteCookie, fetchCookies, fetchDomain, onCookieChange }

@@ -1,4 +1,3 @@
-import React from 'react'
 import CookieRow from './CookieRow'
 import { Delete as DeleteIcon } from '@material-ui/icons'
 
@@ -24,7 +23,6 @@ const CookieList = () => {
         <th>Value</th>
         <th>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</th>
       </tr>
-
       {cookies.length > 0 ? (
         cookies.map((cookie: any, index: any) => (
           <CookieRow key={`cookie-${cookie.domain}-${index}`} cookie={cookie} index={index} />

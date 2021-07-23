@@ -21,7 +21,7 @@ td {
   color: #61dafb;
 }
 
-#value-input {
+.value-input {
   border: none;
   display: inline;
   font-family: inherit;

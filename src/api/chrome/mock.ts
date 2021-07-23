@@ -10,13 +10,13 @@ var _COOKIES = [
   { domain: 'stackoverflow.com', name: 'cookie 9', value: '6342634263246342623' },
 ]
 
-const deleteCookie = (cookie: any) => {
+const deleteCookie = () => {
   return new Promise((resolve) => {
     resolve(true)
   })
 }
 
-const fetchCookies = async (domain: any) => {
+const fetchCookies = async () => {
   return new Promise((resolve) => {
     resolve(_COOKIES)
   })
@@ -34,4 +34,4 @@ const onCookieChange = (onChange: Function) => {
   })
 }
 
-export default { deleteCookie, fetchCookies, fetchDomain, onCookieChange }
+export { deleteCookie, fetchCookies, fetchDomain, onCookieChange }
