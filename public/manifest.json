@@ -13,16 +13,16 @@
     "default_popup": "popup.html",
     "default_title": "React Chrome Extension",
     "default_icon": {
-      "16": "/images/react-logo-16.png",
-      "32": "/images/react-logo-32.png",
-      "48": "/images/react-logo-48.png",
-      "128": "/images/react-logo-128.png"
+      "16": "/images/actual-cookie-cog-16.png",
+      "32": "/images/actual-cookie-cog-32.png",
+      "48": "/images/actual-cookie-cog-48.png",
+      "128": "/images/actual-cookie-cog-128.png"
     }
   },
   "icons": {
-    "16": "/images/react-logo-16.png",
-    "32": "/images/react-logo-32.png",
-    "48": "/images/react-logo-48.png",
-    "128": "/images/react-logo-128.png"
+    "16": "/images/actual-cookie-cog-16.png",
+    "32": "/images/actual-cookie-cog-32.png",
+    "48": "/images/actual-cookie-cog-48.png",
+    "128": "/images/actual-cookie-cog-128.png"
   }
 }
