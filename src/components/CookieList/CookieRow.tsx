@@ -8,6 +8,8 @@ import {
   Edit as EditIcon,
 } from '@material-ui/icons'
 import Form from './Form'
+import { Input } from './index.style'
+import { TableData } from './index.style'
 
 const CookieRow = ({ cookie }: any) => {
   const [visible, setVisible] = useState(false)
@@ -36,17 +38,17 @@ const CookieRow = ({ cookie }: any) => {
   return (
     <>
       <tr>
-        <td>{cookie.domain}</td>
-        <td>{cookie.name}</td>
-        <td>
-          <input className="value-input" type={visible ? 'text' : 'password'} value={cookie.value} />
-        </td>
-        <td style={{ display: 'flex', flexDirection: 'row' }}>
+        <TableData>{cookie.domain}</TableData>
+        <TableData>{cookie.name}</TableData>
+        <TableData>
+          <Input type={visible ? 'text' : 'password'} value={cookie.value} />
+        </TableData>
+        <TableData style={{ display: 'flex', flexDirection: 'row' }}>
           <VisibilityToggle onClick={handleValueToggle} />
           <EditIcon onClick={handleEditCookie}></EditIcon>
           <CopyIcon onClick={handleValueCopy} />
           <DeleteIcon onClick={handleCookieDelete} />
-        </td>
+        </TableData>
       </tr>
       {editMode && <Form cookie={cookie} />}
     </>

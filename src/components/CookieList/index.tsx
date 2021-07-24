@@ -3,6 +3,7 @@ import { Delete as DeleteIcon } from '@material-ui/icons'
 
 import { useCookies } from './hooks'
 import chromeApi from '../../api/chrome'
+import { Container, TableHeader } from './index.style'
 
 const CookieList = () => {
   const cookies = useCookies()
@@ -16,13 +17,11 @@ const CookieList = () => {
   }
 
   return (
-    <table>
-      <tr>
-        <th>Domain</th>
-        <th>Key</th>
-        <th>Value</th>
-        <th>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</th>
-      </tr>
+    <Container>
+      <TableHeader>Domain</TableHeader>
+      <TableHeader>Key</TableHeader>
+      <TableHeader>Value</TableHeader>
+      <TableHeader>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</TableHeader>
       {cookies.length > 0 ? (
         cookies.map((cookie: any, index: any) => (
           <CookieRow key={`cookie-${cookie.domain}-${index}`} cookie={cookie} index={index} />
@@ -30,7 +29,7 @@ const CookieList = () => {
       ) : (
         <h4>No cookies for you :c</h4>
       )}
-    </table>
+    </Container>
   )
 }
 

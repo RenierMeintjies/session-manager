@@ -1,12 +1,11 @@
-import React from 'react'
-import './App.css'
+import { AppContainer } from './App.style'
 import CookieList from './components/CookieList'
 
 const App = () => {
   return (
-    <div className="App">
+    <AppContainer>
       <CookieList />
-    </div>
+    </AppContainer>
   )
 }
 
