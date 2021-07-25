@@ -1,7 +1,7 @@
 import CookieRow from './CookieRow'
 import { Delete as DeleteIcon } from '@material-ui/icons'
 
-import { useCookies } from './hooks'
+import { useCookies } from '../../hooks/cookies'
 import chromeApi from '../../api/chrome'
 import { Container, TableHeader } from './index.style'
 
