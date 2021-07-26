@@ -1,0 +1,6 @@
+semi: false
+singleQuote: true
+prettier.jsxBracketSameLine: true
+prettier.printWidth: 120
+prettier.useTabs: false
+prettier.arrowParens: 'avoid'
