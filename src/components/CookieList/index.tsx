@@ -1,9 +1,9 @@
 import CookieRow from './CookieRow'
-import { Delete as DeleteIcon } from '@material-ui/icons'
+import chromeApi from '../../api/chrome'
 
 import { useCookies } from '../../hooks/cookies'
-import chromeApi from '../../api/chrome'
 import { Container, TableHeader } from './index.style'
+import { Delete as DeleteIcon } from '@material-ui/icons'
 
 const CookieList = () => {
   const cookies = useCookies()

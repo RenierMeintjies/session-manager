@@ -1,5 +1,9 @@
-import { useState } from 'react'
+import Form from './Form'
 import chromeApi from '../../api/chrome'
+
+import { useState } from 'react'
+import { Input } from './index.style'
+import { TableData } from './index.style'
 import {
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
@@ -7,9 +11,6 @@ import {
   FileCopy as CopyIcon,
   Edit as EditIcon,
 } from '@material-ui/icons'
-import Form from './Form'
-import { Input } from './index.style'
-import { TableData } from './index.style'
 
 const CookieRow = ({ cookie }: any) => {
   const [visible, setVisible] = useState(false)
