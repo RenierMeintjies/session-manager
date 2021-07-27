@@ -8,14 +8,18 @@ export const useCookies = () => {
   const domain = useDomain()
 
   const fetchCookies = () => {
+    console.log('fetchCookies() started...')
     chromeApi.fetchCookies(domain).then((results: any) => {
+      console.log('fetchCookies() finished', results)
       setCookies(results)
     })
   }
 
   useEffect(() => {
-    fetchCookies()
-    chromeApi.onCookieChange(fetchCookies)
+    if (domain) {
+      fetchCookies()
+      chromeApi.onCookieChange(fetchCookies)
+    }
   }, [domain])
   return cookies
 }
@@ -24,7 +28,7 @@ export const useDomain = () => {
   const [domain, setDomain] = useState<any>('')
 
   useEffect(() => {
-    chromeApi.fetchDomain().then((result: any) => {
+    chromeApi.fetchDomain().then(result => {
       setDomain(result)
     })
   }, [])
