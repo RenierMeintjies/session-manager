@@ -1,9 +1,24 @@
 import styled from 'styled-components'
 
-export const Container = styled.table``
+export const Container = styled.table`
+  table-layout: auto;
+  max-width: fit-content;
+  min-width: max-content;
+  width: 100%;
+  border-collapse: collapse;
+
+  tr:nth-child(even) {
+    background-color: #3e4450;
+  }
+
+  tr:nth-child(even) > td > input {
+    background-color: #3e4450;
+  }
+`
 
 export const Input = styled.input`
   border: none;
+  border-bottom: 1px solid black;
   display: inline;
   font-family: inherit;
   font-size: inherit;
@@ -25,7 +40,7 @@ export const TableHeader = styled.th`
 `
 
 export const TableData = styled.td`
-  border: 1px solid black;
+  border-bottom: 0.5px solid black;
   padding: 0.5em 1em;
   max-width: fit-content;
   overflow: auto;

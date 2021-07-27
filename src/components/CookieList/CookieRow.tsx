@@ -44,7 +44,7 @@ const CookieRow = ({ cookie }: any) => {
         <TableData>
           <Input type={visible ? 'text' : 'password'} value={cookie.value} />
         </TableData>
-        <TableData style={{ display: 'flex', flexDirection: 'row' }}>
+        <TableData>
           <VisibilityToggle onClick={handleValueToggle} />
           <EditIcon onClick={handleEditCookie}></EditIcon>
           <CopyIcon onClick={handleValueCopy} />
