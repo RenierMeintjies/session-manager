@@ -2,7 +2,7 @@ import CookieRow from './CookieRow'
 import chromeApi from '../../api/chrome'
 
 import { useCookies } from '../../hooks/cookies'
-import { Container, TableHeader } from './index.style'
+import { Container, TableHeader, NoCookies } from './index.style'
 import { Delete as DeleteIcon } from '@material-ui/icons'
 
 const CookieList = () => {
@@ -27,7 +27,7 @@ const CookieList = () => {
           <CookieRow key={`cookie-${cookie.domain}-${index}`} cookie={cookie} index={index} />
         ))
       ) : (
-        <h4>No cookies for you :c</h4>
+        <NoCookies>No cookies for you :c</NoCookies>
       )}
     </Container>
   )
