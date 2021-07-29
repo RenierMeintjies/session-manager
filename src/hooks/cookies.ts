@@ -8,9 +8,7 @@ export const useCookies = () => {
   const domain = useDomain()
 
   const fetchCookies = () => {
-    console.log('fetchCookies() started...')
     chromeApi.fetchCookies(domain).then((results: any) => {
-      console.log('fetchCookies() finished', results)
       setCookies(results)
     })
   }
