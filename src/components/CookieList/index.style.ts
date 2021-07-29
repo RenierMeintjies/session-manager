@@ -46,4 +46,6 @@ export const TableData = styled.td`
   overflow: auto;
 `
 
+export const NoCookies = styled.h4``
+
 export default { Container, Input, ListHeader, TableHeader, TableData }
