@@ -50,7 +50,7 @@ const CookieRow = ({ cookie }: any) => {
           <DeleteIcon onClick={handleCookieDelete} />
         </TableData>
       </tr>
-      {editMode && <Form cookie={cookie} />}
+      {editMode && <Form data={cookie} />}
     </>
   )
 }
