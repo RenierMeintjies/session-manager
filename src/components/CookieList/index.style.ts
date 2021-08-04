@@ -46,6 +46,8 @@ export const TableData = styled.td`
   overflow: auto;
 `
 
-export const NoCookies = styled.h4``
+export const NoCookies = styled.h4`
+  color: red;
+`
 
 export default { Container, Input, ListHeader, TableHeader, TableData }
