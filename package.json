@@ -43,6 +43,7 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "json-server": "^0.16.3",
     "@types/chrome": "^0.0.148",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.0",
