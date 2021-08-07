@@ -40,7 +40,7 @@ const Form = ({ data }: any) => {
   }
 
   const DynamicInput = ({ _key, value }: inputData) => {
-    if (typeof value == 'string') {
+    if (typeof value === 'string') {
       if (value.length > 30) {
         return <TextArea _key={_key} value={value} />
       } else {
