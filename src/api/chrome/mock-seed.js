@@ -7,6 +7,8 @@ module.exports = () => {
       name: `cookiethisisatestignorefornowpleasethanks-${i}`,
       domain: `domain-${i}.com`,
       value: Math.random().toString(36).substring(2),
+      date: new Date(),
+      isLoggedIn: true,
     })
   }
   return data
