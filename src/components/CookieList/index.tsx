@@ -2,7 +2,7 @@ import CookieRow from './CookieRow'
 import chromeApi from '../../api/chrome'
 
 import { useCookies } from '../../hooks/cookies'
-import { Container, TableHeader, NoCookies } from './style'
+import * as S from './style'
 import { Delete as DeleteIcon } from '@material-ui/icons'
 
 const CookieList = () => {
@@ -16,20 +16,28 @@ const CookieList = () => {
     }
   }
 
+  const HeaderContainer = () => {
+    return (
+      <S.ListHeader>
+        <S.Title>Domain</S.Title>
+        <S.Title>Key</S.Title>
+        <S.Title>Value</S.Title>
+      </S.ListHeader>
+    )
+  }
+
   return (
-    <Container>
-      <TableHeader>Domain</TableHeader>
-      <TableHeader>Key</TableHeader>
-      <TableHeader>Value</TableHeader>
-      <TableHeader>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</TableHeader>
+    <S.Container>
+      <HeaderContainer />
+      <S.Header>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</S.Header>
       {cookies.length > 0 ? (
         cookies.map((cookie: any, index: any) => (
           <CookieRow key={`cookie-${cookie.domain}-${index}`} cookie={cookie} index={index} />
         ))
       ) : (
-        <NoCookies>No cookies for you :c</NoCookies>
+        <S.NoCookies>No cookies for you :c</S.NoCookies>
       )}
-    </Container>
+    </S.Container>
   )
 }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FormContainer = styled.tr`
+export const FormContainer = styled.div`
   background-color: pink;
   display: flex;
 `
@@ -32,14 +32,14 @@ export const FormItemContainer = styled.div`
 
 // export const ListHeader = styled.div``
 
-// export const TableHeader = styled.th`
+// export const S.Header = styled.th`
 //   border: 1px solid black;
 //   padding: 0.5em 1em;
 //   max-width: fit-content;
 //   overflow: auto;
 // `
 
-// export const TableData = styled.td`
+// export const S.Data = styled.td`
 //   border-bottom: 0.5px solid black;
 //   padding: 0.5em 1em;
 //   max-width: fit-content;

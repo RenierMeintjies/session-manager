@@ -1,19 +1,13 @@
 import styled from 'styled-components'
 
-export const Container = styled.table`
-  table-layout: auto;
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid black;
+  border-right: 1px solid black;
   max-width: fit-content;
   min-width: max-content;
   width: 100%;
-  border-collapse: collapse;
-
-  tr:nth-child(even) {
-    background-color: #3e4450;
-  }
-
-  tr:nth-child(even) > td > input {
-    background-color: #3e4450;
-  }
 `
 
 export const Input = styled.input`
@@ -28,24 +22,30 @@ export const Input = styled.input`
   color: white;
 `
 
-export const ListHeader = styled.div``
+export const ListHeader = styled.div`
+  display: grid;
+  grid-template: header;
+`
 
-export const TableHeader = styled.th`
+export const Title = styled.div``
+
+export const Header = styled.div`
   border: 1px solid black;
   padding: 0.5em 1em;
   max-width: fit-content;
   overflow: auto;
 `
 
-export const TableData = styled.td`
-  border-bottom: 0.5px solid black;
-  padding: 0.5em 1em;
-  max-width: fit-content;
-  overflow: auto;
+export const Data = styled.div`
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding: 1rem 0.5rem;
+  /* max-width: fit-content;
+  overflow: auto; */
 `
 
 export const NoCookies = styled.h4`
   color: red;
 `
 
-export default { Container, Input, ListHeader, TableHeader, TableData }
+export default { Container, Input, ListHeader, Header, Data, Title }
