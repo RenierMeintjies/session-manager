@@ -4,7 +4,7 @@ module.exports = () => {
   for (let i = 1; i < 12; i++) {
     data.cookies.push({
       id: i,
-      name: `cookie-${i}`,
+      name: `cookiethisisatestignorefornowpleasethanks-${i}`,
       domain: `domain-${i}.com`,
       value: Math.random().toString(36).substring(2),
     })
