@@ -1,8 +1,8 @@
-import Form from './Form'
+import Form from './form'
 import chromeApi from '../../api/chrome'
 
 import { useState } from 'react'
-import { Input, TableData } from './index.style'
+import * as S from './style'
 import {
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
@@ -38,17 +38,17 @@ const CookieRow = ({ cookie }: any) => {
   return (
     <>
       <tr>
-        <TableData>{cookie.domain}</TableData>
-        <TableData>{cookie.name}</TableData>
-        <TableData>
-          <Input type={visible ? 'text' : 'password'} defaultValue={cookie.value} />
-        </TableData>
-        <TableData>
+        <S.TableData>{cookie.domain}</S.TableData>
+        <S.TableData>{cookie.name}</S.TableData>
+        <S.TableData>
+          <S.Input type={visible ? 'text' : 'password'} defaultValue={cookie.value} />
+        </S.TableData>
+        <S.TableData>
           <VisibilityToggle onClick={handleValueToggle} />
           <EditIcon onClick={handleEditCookie}></EditIcon>
           <CopyIcon onClick={handleValueCopy} />
           <DeleteIcon onClick={handleCookieDelete} />
-        </TableData>
+        </S.TableData>
       </tr>
       {editMode && <Form data={cookie} />}
     </>

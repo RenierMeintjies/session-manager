@@ -1,29 +1,30 @@
-import { inputData } from '../../interfaces'
+import { inputData } from '../../../interfaces'
+import { FormItemContainer } from './style'
 
 const Input = ({ _key, value }: inputData) => {
   return (
-    <span>
+    <FormItemContainer>
       <h4>{_key}:</h4>
       <input defaultValue={value.toString() || ''} />
-    </span>
+    </FormItemContainer>
   )
 }
 
 const TextArea = ({ _key, value }: inputData) => {
   return (
-    <span>
+    <FormItemContainer>
       <h4>{_key}:</h4>
       <textarea defaultValue={value.toString() || ''} />
-    </span>
+    </FormItemContainer>
   )
 }
 
 const Checkbox = ({ _key, value }: inputData) => {
   return (
-    <span>
+    <FormItemContainer>
       <h4>{_key}:</h4>
       <input type="checkbox" defaultValue={value.toString() || ''} />
-    </span>
+    </FormItemContainer>
   )
 }
 
@@ -34,10 +35,10 @@ const DynamicInput = ({ _key, value }: inputData) => {
     return <Checkbox _key={_key} value={value} />
   } else {
     return (
-      <span>
+      <FormItemContainer>
         <h4>{_key}:</h4>
         <input defaultValue={value.toString() || ''} />
-      </span>
+      </FormItemContainer>
     )
   }
 }
