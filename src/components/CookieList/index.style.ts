@@ -28,9 +28,7 @@ export const Input = styled.input`
   color: white;
 `
 
-export const ListHeader = styled.div`
-  display: flex;
-`
+export const ListHeader = styled.div``
 
 export const TableHeader = styled.th`
   border: 1px solid black;
