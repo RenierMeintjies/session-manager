@@ -36,20 +36,21 @@ const CookieRow = ({ cookie }: any) => {
   const VisibilityToggle = visible ? VisibilityIcon : VisibilityOffIcon
 
   return (
-    <S.Container>
-      <S.Data>{cookie.domain}</S.Data>
-      <S.Data>{cookie.name}</S.Data>
-      <S.Data>
+    <>
+      <S.Cell>
+        <S.Text>{cookie.name}</S.Text>
+      </S.Cell>
+      <S.Cell>
         <S.Input type={visible ? 'text' : 'password'} defaultValue={cookie.value} />
-      </S.Data>
-      <S.Data>
+      </S.Cell>
+      <S.ActionsContainer>
         <VisibilityToggle onClick={handleValueToggle} />
         <EditIcon onClick={handleEditCookie}></EditIcon>
         <CopyIcon onClick={handleValueCopy} />
         <DeleteIcon onClick={handleCookieDelete} />
-      </S.Data>
+      </S.ActionsContainer>
       {editMode && <Form data={cookie} />}
-    </S.Container>
+    </>
   )
 }
 

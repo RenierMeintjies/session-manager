@@ -16,20 +16,11 @@ const CookieList = () => {
     }
   }
 
-  const HeaderContainer = () => {
-    return (
-      <S.ListHeader>
-        <S.Title>Domain</S.Title>
-        <S.Title>Key</S.Title>
-        <S.Title>Value</S.Title>
-      </S.ListHeader>
-    )
-  }
-
   return (
     <S.Container>
-      <HeaderContainer />
-      <S.Header>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</S.Header>
+      <S.Cell>Key</S.Cell>
+      <S.Cell>Value</S.Cell>
+      <S.Cell>{cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}</S.Cell>
       {cookies.length > 0 ? (
         cookies.map((cookie: any, index: any) => (
           <CookieRow key={`cookie-${cookie.domain}-${index}`} cookie={cookie} index={index} />
