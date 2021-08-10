@@ -8,7 +8,7 @@ interface inputData {
 const Form = ({ data }: any) => {
   const Input = ({ _key, value }: inputData) => {
     return (
-      <span style={{ display: 'flex' }}>
+      <span>
         <h4>{_key}:</h4>
         <input defaultValue={value.toString() || ''} />
       </span>
@@ -16,7 +16,7 @@ const Form = ({ data }: any) => {
   }
   const TextArea = ({ _key, value }: inputData) => {
     return (
-      <span style={{ display: 'flex' }}>
+      <span>
         <h4>{_key}:</h4>
         <textarea defaultValue={value.toString() || ''} />
       </span>
@@ -41,19 +41,31 @@ const Form = ({ data }: any) => {
 
   const DynamicInput = ({ _key, value }: inputData) => {
     if (typeof value === 'string') {
-      if (value.length > 30) {
-        return <TextArea _key={_key} value={value} />
-      } else {
-        return <Input _key={_key} value={value} />
-      }
+      return value.length > 30 ? <TextArea _key={_key} value={value} /> : <Input _key={_key} value={value} />
     } else {
       return (
-        <span style={{ display: 'flex' }}>
+        <span>
           <h4>{_key}:</h4>
           <input defaultValue={value.toString() || ''} />
         </span>
       )
     }
+
+    // if (typeof value === 'string') {
+    //   if (value.length > 30) {
+    //     return <TextArea _key={_key} value={value} />
+    //   } else {
+    //     return <Input _key={_key} value={value} />
+    //   }
+    // } else {
+    //   return (
+    //     <span>
+    //       <h4>{_key}:</h4>
+    //       <input defaultValue={value.toString() || ''} />
+    //     </span>
+    //   )
+    // }
+
     // switch (type) {
     //   case 'string':
     //   case 'longstring':
