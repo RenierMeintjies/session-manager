@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 33vw);
+  grid-template-columns: repeat(3, 33.3vw);
   border-top: 1px solid black;
   border-right: 1px solid black;
   max-width: fit-content;
