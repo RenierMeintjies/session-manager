@@ -7,13 +7,13 @@ export const FormContainer = styled.div`
 
 export const Form = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 20vw);
+  grid-template-columns: repeat(3, 33vw);
   background-color: blue;
 `
 
 export const FormItemContainer = styled.div`
   background-color: #dee3ef;
-  border: 1px solid red;
+  border: 1px solid green;
   margin-bottom: 2px;
 `
 

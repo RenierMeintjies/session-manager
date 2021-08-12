@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 20vw);
+  grid-template-columns: repeat(3, 33vw);
   border-top: 1px solid black;
   border-right: 1px solid black;
   max-width: fit-content;
@@ -41,8 +41,8 @@ export const Cell = styled.div`
 
 export const ActionsContainer = styled.div`
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat(4, 1.5rem);
+  justify-content: center;
   column-gap: 0.5rem;
   border-right: 1px solid black;
   border-bottom: 1px solid black;

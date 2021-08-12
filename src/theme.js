@@ -1,4 +1,5 @@
 const theme = {}
+theme.popupWidth = '500px'
 
 theme.palette = {
   primary: '#3c6e71',
