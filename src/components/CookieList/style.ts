@@ -37,6 +37,7 @@ export const Cell = styled.div`
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
+  min-width: 33.3vw;
 `
 
 export const ActionsContainer = styled.div`
