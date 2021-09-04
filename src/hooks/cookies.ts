@@ -3,22 +3,20 @@ import chromeApi from '../api/chrome'
 
 // Cookie hooks
 
-export const useCookies = () => {
+export const useCookies = (overview = false) => {
   const [cookies, setCookies] = useState<any>([])
   const domain = useDomain()
 
   const fetchCookies = () => {
-    chromeApi.fetchCookies(domain).then((results: any) => {
+    chromeApi.fetchCookies(!overview ? domain : undefined).then((results: any) => {
       setCookies(results)
     })
   }
 
   useEffect(() => {
-    if (domain) {
-      fetchCookies()
-      chromeApi.onCookieChange(fetchCookies)
-    }
-  }, [domain])
+    fetchCookies()
+    chromeApi.onCookieChange(fetchCookies)
+  }, [domain, overview])
   return cookies
 }
 
