@@ -2,10 +2,8 @@ import styled from 'styled-components'
 import theme from './theme'
 
 export const AppContainer = styled.div`
-  display: flex;
   min-height: 100vh;
-  flex-direction: column;
-  max-width: fit-content;
+  min-width: ${theme.popupWidth};
   margin: auto;
   background-color: ${theme.palette.bg};
   color: ${theme.palette.text};
