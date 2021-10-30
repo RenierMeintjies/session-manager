@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
-export const Main = styled('div')`
+export const Main = styled.div`
   font-family: sans-serif;
   background: #f0f0f0;
   height: 100vh;
 `
 
-export const DropDownContainer = styled('div')`
+export const DropDownContainer = styled.div`
   width: 10.5em;
   margin: 0 auto;
 `
 
-export const DropDownHeader = styled('div')`
+export const DropDownHeader = styled.div`
   margin-bottom: 0.8em;
   padding: 0.4em 2em 0.4em 1em;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
@@ -21,9 +21,9 @@ export const DropDownHeader = styled('div')`
   background: #ffffff;
 `
 
-export const DropDownListContainer = styled('div')``
+export const DropDownListContainer = styled.div``
 
-export const DropDownList = styled('ul')`
+export const DropDownList = styled.ul`
   padding: 0;
   margin: 0;
   padding-left: 1em;
@@ -38,7 +38,7 @@ export const DropDownList = styled('ul')`
   }
 `
 
-export const ListItem = styled('li')`
+export const ListItem = styled.li`
   list-style: none;
   margin-bottom: 0.8em;
 `
