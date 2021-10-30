@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import CookieRow from './CookieRow'
+import CookieJar from '../CookieJar'
 import chromeApi from '../../api/chrome'
 
 import { useCookies } from '../../hooks/cookies'
@@ -27,6 +28,7 @@ const CookieList = () => {
       <S.Cell>Key</S.Cell>
       <S.Cell>Value</S.Cell>
       <S.Cell>
+        <CookieJar />
         {cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}
         <button onClick={handleToggleClick}>{overview ? 'current domain' : 'see all domains'}</button>
       </S.Cell>
