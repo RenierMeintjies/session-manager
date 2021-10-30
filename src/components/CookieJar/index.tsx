@@ -1,5 +1,5 @@
-import * as S from './style'
 import { useState } from 'react'
+import * as S from './style'
 
 const CookieJar = () => {
   const [isOpen, setIsOpen] = useState(false)
