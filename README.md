@@ -6,9 +6,7 @@
   <img src='public/images/actual-cookie-cog-128.png'>
 </p>
 
-## The best cookie/session manager, created with React and Typescript
-
-### Requirements 📜
+## Developers 🧑‍💻
 
 - node >= v16.13.1
 
@@ -17,8 +15,6 @@
 - 🧶 yarn >= v1.22.17
 
 [Best way to get node/npm 🔥](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-### Developers 🧑‍💻
 
 > To install dependencies navigate to the project root & run:
 
