@@ -42,6 +42,8 @@ yarn start
 
 4. Reload extension each time after running `make build`
 
+---
+
 ### Planned Features
 
 - [ ] Easy session switching between multiple logins per domain
