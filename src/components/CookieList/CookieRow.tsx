@@ -1,8 +1,7 @@
-import Form from './form'
 import chromeApi from '../../api/chrome'
-
-import { useState } from 'react'
+import Form from '../DynamicForm'
 import * as S from './style'
+import { useState } from 'react'
 import {
   Visibility as VisibilityIcon,
   VisibilityOff as VisibilityOffIcon,
@@ -41,7 +40,7 @@ const CookieRow = ({ cookie }: any) => {
         <S.Text>{cookie.name}</S.Text>
       </S.Cell>
       <S.Cell>
-        <S.Input type={visible ? 'text' : 'password'} defaultValue={cookie.value} />
+        <S.Input disabled type={visible ? 'text' : 'password'} defaultValue={cookie.value} />
       </S.Cell>
       <S.ActionsContainer>
         <VisibilityToggle onClick={handleValueToggle} />
