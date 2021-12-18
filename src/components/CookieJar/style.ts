@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Main = styled.div`
   font-family: sans-serif;
   background: #f0f0f0;
-  height: 100vh;
+  height: max-content;
 `
 
 export const DropDownContainer = styled.div`
