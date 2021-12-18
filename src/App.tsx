@@ -1,11 +1,12 @@
-import { AppContainer } from './App.style'
+import * as S from './App.style'
+
 import CookieList from './components/CookieList'
 
 const App = () => {
   return (
-    <AppContainer>
+    <S.AppContainer>
       <CookieList />
-    </AppContainer>
+    </S.AppContainer>
   )
 }
 
