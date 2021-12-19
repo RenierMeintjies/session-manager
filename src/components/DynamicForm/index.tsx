@@ -6,9 +6,9 @@ const Form = ({ data }: any) => {
     <S.FormContainer>
       <S.Form>
         {data ? (
-          Object.keys(data).map((_key: string) => {
-            return <DynamicInput _key={_key} value={data[_key]} />
-          })
+          Object.keys(data).map((_key: string, index: number) => (
+            <DynamicInput key={index} _key={_key} value={data[_key]} />
+          ))
         ) : (
           <S.NoCookies>no data</S.NoCookies>
         )}
