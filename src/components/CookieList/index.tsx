@@ -31,8 +31,8 @@ const CookieList = () => {
         <button onClick={handleToggleClick}>{overview ? 'current domain' : 'see all domains'}</button>
       </S.Cell>
       {cookies.length > 0 ? (
-        cookies.map((cookie: any, index: any) => (
-          <CookieRow key={`cookie-${cookie.domain}-${index}`} cookie={cookie} index={index} />
+        cookies.map((cookie: any, index: number) => (
+          <CookieRow key={`cookie-${index}-${cookie.domain}`} cookie={cookie} index={index} />
         ))
       ) : (
         <S.NoCookies>No cookies for you :c</S.NoCookies>
