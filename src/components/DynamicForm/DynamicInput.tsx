@@ -1,6 +1,7 @@
 import { inputData } from '../../interfaces'
 import { startCase } from 'lodash'
 import * as S from './style'
+import { useState } from 'react'
 
 const Input = ({ _key, value }: inputData) => {
   return (
@@ -24,7 +25,7 @@ const Checkbox = ({ _key, value }: inputData) => {
   return (
     <S.FormItemContainer>
       <S.Label>{startCase(_key)}:</S.Label>
-      <S.Input type="checkbox" defaultValue={value.toString() || ''} />
+      <S.Input type="checkbox" defaultChecked={value as boolean} />
     </S.FormItemContainer>
   )
 }
