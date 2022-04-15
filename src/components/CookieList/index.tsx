@@ -2,13 +2,13 @@ import { useState } from 'react'
 import CookieRow from './CookieRow'
 import chromeApi from '../../api/chrome'
 
-import { useCookies } from '../../hooks/cookies'
+import { useCookies } from '../../hooks/useCookies'
 import * as S from './style'
 import { Delete as DeleteIcon } from '@material-ui/icons'
 
 const CookieList = () => {
-  const [overview, setOverview] = useState(false)
-  const cookies = useCookies(overview)
+  const [seeAllDomains, setSeeAllDomains] = useState(false)
+  const cookies = useCookies(seeAllDomains)
 
   const handleDeleteAll = () => {
     if (window.confirm(`Are you sure you want to delete all cookies?`)) {
@@ -19,7 +19,7 @@ const CookieList = () => {
   }
 
   const handleToggleClick = () => {
-    setOverview(!overview)
+    setSeeAllDomains(!seeAllDomains)
   }
 
   return (
@@ -28,7 +28,7 @@ const CookieList = () => {
       <S.Cell>Value</S.Cell>
       <S.Cell>
         {cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}
-        <button onClick={handleToggleClick}>{overview ? 'current domain' : 'see all domains'}</button>
+        <button onClick={handleToggleClick}>{seeAllDomains ? 'current domain' : 'see all domains'}</button>
       </S.Cell>
       {cookies.length > 0 ? (
         cookies.map((cookie: any, index: number) => {
