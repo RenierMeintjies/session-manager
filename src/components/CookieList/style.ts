@@ -6,14 +6,22 @@ const {
   palette,
 } = theme
 
+interface Props {
+  domainView: boolean
+}
+
+export const Details = styled.details``
+
+export const Summary = styled.summary`
+  padding: 12px;
+  border-bottom: 1px solid ${palette.border};
+`
+
 export const Container = styled.div`
+  border-top: ${(props: Props) => (props.domainView ? 0 : 1)}px solid ${palette.border};
   display: grid;
   grid-template-columns: repeat(${numberOfColumns}, ${columnWidth});
-  border-top: 1px solid ${palette.border};
   border-right: 1px solid ${palette.border};
-  max-width: fit-content;
-  min-width: max-content;
-  width: 100%;
 `
 
 export const Input = styled.input`
