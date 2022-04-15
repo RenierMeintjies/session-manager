@@ -20,7 +20,7 @@ const CookieList = () => {
 
   const handleToggleClick = () => {
     setSeeAllDomains(!seeAllDomains)
-  } 
+  }
 
   return (
     <S.Container>
