@@ -44,6 +44,7 @@ const CookieList = () => {
 
     return (
       <>
+        <button onClick={handleToggleClick}>{seeAllDomains ? 'current domain' : 'see all domains'}</button>
         {Object.keys(groupedCookies).map((domain: string, index: number) => {
           return (
             <S.Details>
