@@ -1,21 +1,37 @@
 import { useEffect, useState } from 'react'
 import chromeApi from '../api/chrome'
+import { groupBy } from 'lodash'
 
 // Cookie hooks
-export const useCookies = (seeAllDomains = false) => {
+export const useSiteCookies = (domain: string) => {
+  const cookies = useAllCookies(true)
+  const [siteCookies, setSiteCookies] = useState([])
+
+  useEffect(() => {
+    if (cookies.length) {
+      setSiteCookies(cookies[domain])
+    }
+  }, [cookies, domain])
+
+  return siteCookies
+}
+
+export const useAllCookies = (groupByDomain = false) => {
   const [cookies, setCookies] = useState<any>([])
-  const domain = useDomain()
 
   const fetchCookies = () => {
-    chromeApi.fetchCookies(!seeAllDomains ? domain : undefined).then((results: any) => {
-      setCookies(results)
+    console.log('Fetch cookies executed')
+    chromeApi.fetchCookies(undefined).then((results: any) => {
+      const _cookies = groupByDomain ? groupBy(results, 'domain') : results
+      setCookies(_cookies)
     })
   }
 
   useEffect(() => {
     fetchCookies()
     chromeApi.onCookieChange(fetchCookies)
-  }, [domain, seeAllDomains])
+  }, [groupByDomain])
+
   return cookies
 }
 

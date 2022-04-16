@@ -6,19 +6,7 @@ const {
   palette,
 } = theme
 
-interface Props {
-  domainView: boolean
-}
-
-export const Details = styled.details``
-
-export const Summary = styled.summary`
-  padding: 12px;
-  border-bottom: 1px solid ${palette.border};
-`
-
 export const Container = styled.div`
-  border-top: ${(props: Props) => (props.domainView ? 0 : 1)}px solid ${palette.border};
   display: grid;
   grid-template-columns: repeat(${numberOfColumns}, ${columnWidth});
   border-right: 1px solid ${palette.border};
@@ -70,8 +58,4 @@ export const Header = styled.div`
   padding: 0.5em 1em;
   max-width: fit-content;
   overflow: auto;
-`
-
-export const NoCookies = styled.h4`
-  color: ${palette.danger};
 `
