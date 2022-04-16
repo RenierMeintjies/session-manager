@@ -29,7 +29,7 @@ const CookieList = () => {
         <S.Cell>Value</S.Cell>
         <S.Cell>
           {cookies.length > 0 && <DeleteIcon onClick={handleDeleteAll} />}
-          <button onClick={handleToggleClick}>{seeAllDomains ? 'current domain' : 'see all domains'}</button>
+          <S.Button onClick={handleToggleClick}>{seeAllDomains ? 'current domain' : 'see all domains'}</S.Button>
         </S.Cell>
 
         {cookies.map((cookie: any, index: number) => {
@@ -44,7 +44,7 @@ const CookieList = () => {
 
     return (
       <>
-        <button onClick={handleToggleClick}>{seeAllDomains ? 'current domain' : 'see all domains'}</button>
+        <S.Button onClick={handleToggleClick}>{seeAllDomains ? 'current domain' : 'see all domains'}</S.Button>
         {Object.keys(groupedCookies).map((domain: string, index: number) => {
           return (
             <S.Details>

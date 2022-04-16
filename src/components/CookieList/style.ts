@@ -75,3 +75,42 @@ export const Header = styled.div`
 export const NoCookies = styled.h4`
   color: ${palette.danger};
 `
+export const Button = styled.button`
+  border: 2px solid steelblue;
+  color: white;
+  position: relative;
+  padding: 0.3rem ;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  animation-name: spin
+  animation-iteration-count: infinite
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -0.6rem;
+    top: -0.5rem;
+    z-index: -1;
+    background-color: steelblue;
+    transition: all 200ms ease-out;
+  }
+
+  &:active {
+  animation: spin 640ms infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    67% {
+      transform: translate(0.4rem, -1.8rem) rotate(160deg) scale(0.4);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+  }
+`
